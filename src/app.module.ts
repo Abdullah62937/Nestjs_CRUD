@@ -11,11 +11,17 @@ import { EmployeeModule } from './employee/employee.module';
       isGlobal:true
     }),
     TypeOrmModule.forRoot({
-      type:'postgres',
-      url: process.env.DATABASE_URL,
-      autoLoadEntities: false,
-      synchronize: false
-    }),
+  type: 'postgres',
+  host: 'tramway.proxy.rlwy.net',
+  port: 10414,
+  username: 'postgres',
+  password: 'iMGKHMGCBXQBaEftmEJWZvMhHojCtvkp',
+  database: 'railway',
+  autoLoadEntities: true,
+  synchronize: true,
+  ssl: { rejectUnauthorized: false },
+}),
+
     UserModule,
     EmployeeModule,
     ],
