@@ -15,7 +15,7 @@ import { EmployeeModule } from './employee/employee.module';
   host: 'tramway.proxy.rlwy.net',
   port: 10414,
   username: 'postgres',
-  password: 'iMGKHMGCBXQBaEftmEJWZvMhHojCtvkp',
+  password: process.env.DB_PASSWORD,
   database: 'railway',
   autoLoadEntities: true,
   synchronize: true,
