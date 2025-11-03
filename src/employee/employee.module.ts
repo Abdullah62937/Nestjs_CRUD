@@ -10,10 +10,10 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
   imports: [
     TypeOrmModule.forFeature([Employee]),
     JwtModule.registerAsync({
-      imports: [ConfigModule],        // Config module inject hoga
+      imports: [ConfigModule],        
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) => ({
-        secret: configService.get<string>('JWT_SECRET'), // .env se lega
+        secret: configService.get<string>('JWT_SECRET'), 
         signOptions: { expiresIn: '1h' },
       }),
     }),
